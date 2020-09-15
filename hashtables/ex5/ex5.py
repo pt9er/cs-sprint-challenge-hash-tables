@@ -14,6 +14,12 @@ def finder(files, queries):
         else:
             table[cmpt[-1]] = [path]
 
+    result = []
+    
+    for values in queries:
+        if table.get(values):
+            result.extend(table.get(values))
+            
     return result
 
 
