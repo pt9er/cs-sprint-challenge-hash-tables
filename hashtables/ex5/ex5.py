@@ -3,10 +3,16 @@
 
 
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    table ={}
+
+    for path in files:
+        cmpt = path.split('/')
+        
+        if table.get(cmpt[-1]):
+            table[cmpt[-1]].append(path)
+            
+        else:
+            table[cmpt[-1]] = [path]
 
     return result
 
