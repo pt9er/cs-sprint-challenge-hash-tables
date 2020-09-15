@@ -1,8 +1,24 @@
 def intersection(arrays):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    cross = {}
+    
+    for singles in arrays:
+        for value in singles:
+            if value not in cross:
+                cross[value] = 1
+            else:
+                cross[value] += 1
+                
+    reserve = {}
+                
+    for key, value in cross.items():
+        if value not in reserve:
+            reserve[value] = [key]
+        else:
+            reserve[value].append(key)
+            
+    result = reserve[len(arrays)]
+                
+    
 
     return result
 
